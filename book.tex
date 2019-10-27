@@ -1,0 +1,1811 @@
+% Libro de Física para principiantes
+\documentclass[a5paper,pagesize,10pt,bibtotoc,pointlessnumbers,
+normalheadings,DIV=9,fleqn,x11names,table,twoside=false]{scrbook}
+
+% twoside, openright
+\KOMAoptions{DIV=last}
+
+%\usepackage{trajan}
+
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+
+
+\usepackage[sc]{mathpazo}
+\linespread{1.05} 
+
+\usepackage{verbatim} % for comments
+%\usepackage{listings} % for comments
+
+%\setlength{\parindent}{10pt}
+%\setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex}
+%\setlength{\parskip}{1.4ex plus 0.35ex minus 0.3ex}
+
+\usepackage{blindtext}
+\newcommand{\q}[1]{>>\textit{#1}<<}
+
+\title{FÍSICA 1ro BGU}   
+\author{Julio César Andrade L.} 
+\date{\today} 
+
+% Insertar portada
+\usepackage{fancybox}
+\usepackage{pdfpages}
+\usepackage{tcolorbox}
+% Insertar portada
+\definecolor{colordominante}{RGB}{64,190,178}
+
+\begin{document}
+\includepdf[pages=-]{images/Portada}
+
+%=========================================
+\begin{titlepage}
+		\centering{
+			{\fontsize{40}{48}\selectfont 
+			FÍSICA 1ro BGU}
+		}\\
+			
+		\vspace{10mm}
+		\centering{\Large{Julio César Andrade L.}}\\
+		\vspace{\fill}
+		\centering \large{2019}
+\end{titlepage}
+
+%=========================================
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent 
+\parbox[s]{0.35\textwidth}{Derechos reservados \copyright\ 2018}\parbox[c]{0.65\textwidth}{
+ \color{gray}
+ } \\\\  
+ 
+\noindent {\color{colordominante} Photos by}: Julio César Andrade.\\
+\noindent \textbf{Libro digital}\\
+
+\noindent  Copyright © 2019 Julio César Andrade. Se concede permiso para copiar, distribuir y/o modificar este documento bajo los 
+términos de la Licencia de Documentación Libre de GNU, Versión 1.3 o cualquier otra versión posterior publicada por la Free 
+Software Foundation; sin Secciones Invariantes ni Textos de Cubierta Delantera ni Textos de Cubierta Trasera. Una copia de la 
+licencia está incluida en la sección titulada "GNU Free Documentation License"\\
+
+Copyright notice above.\\
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.\\
+
+Copyright Infringement Notification.\\
+
+Updated: $Date: 2019/10/23$.\\
+
+\noindent \textit{Primera edición, Octubre 2019} 
+% FIN Página para "derechos reservados", ISBN, licencia creative commons, etc.
+
+%=========================================
+
+\newpage{}
+\thispagestyle {empty}
+
+\vspace*{2cm}
+
+\begin{center}
+	\Large{\parbox{10cm}{
+		\begin{raggedright}
+		{\Large 
+			\textit{Hay niños jugando en la calle que podrían resolver algunos de mis problemas clave en física, 
+			debido a que ellos tienen formas de percepción sensitiva que perdí hace mucho tiempo.}
+		}
+	
+		\vspace{.5cm}\hfill{---Julius Robert Oppenheimer}
+		\end{raggedright}
+	}
+}
+\end{center}
+
+%=========================================
+\tableofcontents 
+\cleardoublepage  %
+%\pagestyle{fancy} % Encabezados
+\chapter*{Introducción}
+
+Se espera que al finalizar el contenido de este libro el estudiante de Física tenga la capacidad para: Comprender como se debe 
+estudiar Física, realizar un plan de estudio y como resolver problemas.
+
+\section*{Invitación a la Física}
+
+\vspace{1.0cm}
+
+\subsection*{¿Como estudiar Física?} 
+
+Adoptese una aptitud positiva hacia la disciplina, teniéndose presente que se trata de la más importante rama de las Ciencias 
+Naturales, y por ende es importante comprender sus conceptos y teorias.
+
+\subsection*{Conceptos y principios de la Física}
+
+En el proceso de aprendizaje es útil tomar cuidadosamente notas en clases y luego preguntar aquellos aspectos que se desea 
+esclarecer en clases y trabajos en laboratorio, podrá complementar el estudio y ayudar a esclarecer algunos puntos.
+
+\subsection*{Plan de estudio}
+
+Es importante que se establezcla un plan de estudio regular, de preferencia del trabajo diario. Las clases adquirirán mayor 
+significado si se lee e investiga por anticipado el tema de Física a tratar en clase.\\
+
+\begin{tcolorbox}
+En lugar de tener una sesión de estudio durante toda la noche para revisar los conceptos básicos y ecuaciones es mejor una buena 
+noche de reposo.
+\end{tcolorbox}
+
+\subsection*{Problemas}
+
+
+\textit{Cuando estas solucionando un problema, no te preocupes. Ahora, después de que has resuelto el problema es el momento de 
+preocuparse.} \textbf{Richard Feynman}
+\vspace{1.0cm}
+
+Debe de tratarse de resolver el mayor número posible de problemas, pero antes de eso debe de comprenderse los principios, 
+conceptos y leyes básicas de los fenómenos naturales que estan involucrados en el problema implicado. Trate de encontrar 
+soluciones alternativas a los mismos problemas. Como sugerencia para resolver un problema planteado de Física se puede seguir los 
+siguientes pasos:\\
+
+\begin{enumerate}
+\item Leáse el problema cuidadosamente y tranquilamente las veces que sean necesarias hasta estar seguro de la situación descrita 
+y de lo que quiere encontrarse o resolver.
+
+\item Realize (dibuje) una representación gráfica del problema con los rótulos de las cantidades físicas implicadas en el 
+problema.
+
+\item Cuando se encamine a lo que se pregunta, debe identificarse que principio o principios básicos están en la situación 
+actuando.
+
+\item Seleccione una relación que involucre los datos conocidos y las incognitas del problema para aplicarla.
+
+\item Sustituya los valores numéricos dados con las unidades apropiadas dentro de la ecuación.
+
+\item Obtengase el valor numérico de la incognita con su respectiva unidad de medida.
+
+\item Revise con minusiosidad que todo el desarrollo sea lo más lógico posible y que su respuesta obtenida sea un valor 
+físicamente coherente.
+ 
+\end{enumerate}
+
+\subsection*{Experimentos}
+
+\textit{...lo que necesitamos es imaginación, pero la imaginación encorsetada en la terrible camisa de fuerza que es el 
+conocimiento, que no importa cuán hermosa sea tu conjetura, no importa cuán inteligente seas, quién hiciese la conjetura o cómo se 
+llame. Si no está de acuerdo con el experimento, está mal.} \textbf{Richard Feynman}
+
+\vspace{1.0cm}
+
+La Física que se fundamenta en evidencias y observaciones experimentales, que en vista de ellas pueden servir para probar o 
+refutar ideas, teorias y modelos propuestos. Cuando los experimentos no son accesibles pueden ser imaginados, teorizados o 
+simulados en una computadora.
+
+\chapter{Bases de estudio}
+
+\textit{``No esperes a que las condiciones sean perfectas para empezar, es principio hacer las condiciones perfectas.''} 
+\textbf{Alan Cohen}
+\vspace{1.0cm}
+
+Antes de abordar el estudio de la Física en sí, es necesario entender lo que es la Ciencia y como se genera el conocimiento 
+científico.
+
+\section{La Ciencia}
+
+Es un sistema ordenado de conocimientos estructurados que estudia, investiga e interpreta los fenómenos naturales, sociales y 
+artificiales. La ciencia  considera y tiene como fundamento las observaciones experimentales.\\ 
+
+Otro concepto de Ciencia es el siguiente:
+
+\begin{tcolorbox}
+La Ciencia es el esfuerzo humano concertado para comprender ó comprender mejor la historia del mundo natural y cómo funciona el 
+mundo natural, con evidencia física observable como la base de ese entendimiento.
+\end{tcolorbox}
+
+En palabras de Brian Greene: ``Para mí, la Ciencia es verdaderamente una forma de vida, una perspectiva, una forma de relacionarse 
+con el mundo, de tal forma que uno puede emplear un pensamiento racional y una lógica deductiva para entender lo que es verdadero, 
+lo que es correcto y lo que en verdad es exacto sobre el mundo que nos rodea.''\\
+ 
+Siempre que se genera un conocimiento nuevo o un descubrimiento se dice con certeza que se ha generado Ciencia, y una parte 
+fundamental del conocimiento humano es conocer cuales son las leyes fundamentales con las cuales este mundo funciona, y  a eso se 
+le llama Ciencia Física, por ello es 
+fundamental saber lo que es la Ciencia y el método para generar Ciencia antes de abordar la Física en sí.
+
+\section{El Método Científico:}
+
+Siempre es más saludable comprender las cosas antes que antes que aprenderlas, porque así la generación de la duda y el por qué de 
+las cosas nos genera la necesidad de saciar nuestras dudas, hallar nuevo conocimiento y hallar una forma correcta de hallarlo. De 
+forma general la generación de 
+conocimiento nuevo no es el fruto del azar sino más bien del esfuerzo y dedicación humana de manera sistematizada y ordenada 
+mediante un proceso definido llamado Método Científico.\\
+
+Este método como su propio nombre indica representa la metodología que define y diferencia el conocimiento de la ciencia de otros 
+tipos de conocimientos. Para ello en general el método científico presenta las siguientes etapas para generar conocimiento nuevo:
+
+\subsection{Observación:}
+Se trata de la actividad en la cual los sentidos captan a un objeto o aun fenómeno de la realidad y crean la necesidad de estudiar 
+aquella realidad observada.
+
+\subsection{Inducción:}
+
+En esta etapa se extrae de manera empírica un principio fundamental de la observación mencionada anteriormente.
+
+\subsection{Hipótesis:}
+
+En esta actividad se elabora una explicación a priori de las observaciones o experiencias y las causas posibles.
+
+\subsection{Demostración o experimentación:}
+
+Esta etapa es vital en la generación del conocimiento científico por cuanto en está etapa mediante la experimentación se reproduce 
+la realidad estudiada bajo el control y medición de los parámetros que intervienen en el mismo, que posteriormente se los analiza 
+mediante la estadística y cálculos 
+matemáticos se puede llegar a conocer como estos parámetros se comportan durante ese fenómeno estudiado.
+
+\subsection{Demostración o refutación de la Hipótesis:}
+
+En este punto dado el análisis previo se puede relacionarlo con la hipótesis planteada y ver si se cumple o si es falsa.
+
+\subsection{Tesis o teoría científica:}
+
+Este punto es en cual el científico tiene el análisis y observaciones suficientes para llegar a conclusiones y establecimientos de 
+verdades reproducibles y refutables las cuales ya pueden ser consideradas como conocimiento nuevo. 
+
+\section{Notación científica:}
+
+En ciencias exactas y experimentales muchas de las cantidades que se manejan o son o muy grandes o muy pequeñas que 
+necesitan ser representadas de tal manera que no se tenga que escribir demasiados ceros, por ejemplo; resulta molesto escribir un 
+número como 0.00000000000000034 varias veces de esa manera, o por ejemplo el número 2440000000000000000000000, y para ello usamos 
+las matemáticas de los exponentes, de 
+la siguiente manera:
+
+\begin{tcolorbox}
+\textbf{Formato de la Notación Científica}\\
+
+La forma general de un número en notación científica es: $a\times 10^n$ donde $1<a<9$ y $n$ es un entero.\\
+\end{tcolorbox}
+
+
+De ese modo se debe poner mucha atención a ese formato para escribir cualquier número correctamente en notación científica.\\
+
+Por ejemplo el número 0.00000000000000034 expresado en notación científica es $3.4\times10^{16}$, y el número 
+2440000000000000000000000 en cambio expresado de esta manera es $2.4\times10^{24}$, lo cual se ve que resulta fácilmente más 
+comodo usar esta notación y por lo cual demasiado espacio del 
+papel.\\
+
+Otros ejemplos:\\
+
+\textit{Números grandes:}\\
+
+$1230,99 = 1,23099\times10^3$\\
+$3450000000 = 3,45\times10^{9}$\\
+$560000000000000000 = 5,6\times10^{17}$ 
+
+\begin{tcolorbox}
+Si se trata de un número grande al cual se quiere expresarlo en notación científica el procedimiento es mover el punto décimal 
+hacia la izquierda contando las posiciones que recorre hasta antes el primer dígito de la izquierda y entonces multiplicar este 
+número por una potencia de 10 elevado al 
+número de posiciones recorridas. 
+\end{tcolorbox}
+
+\textit{Números pequeños:}\\
+
+$0,00000045 = 4,5\times10^{-7}$\\
+$0,00000006589 = 6,589\times10^{-8}$\\
+$0,0000000000000000000000345 = 3,45\times10^{-23}$\\
+
+\begin{tcolorbox}
+Si se trata de un número menor que 1 al cual se quiere expresarlo en notación científica el procedimiento es mover el punto 
+décimal hacia la derecha contando las posiciones que recorre hasta antes del segundo dígito de la derecha y entonces multiplicar 
+este número por una potencia de 10 elevado al 
+número de posiciones recorridas con signo negativo. 
+\end{tcolorbox}
+
+En el manejo de este tipo de cantidades resulta común la realización de operaciones matemáticas básicas entre ellas, para lo cual 
+se plantea a el lector los siguientes problemas de modo que se familiarize con el uso de estas cantidades:
+
+\subsection{Problemas propuestos:}
+
+Exprese las siguientes cantidades en notación científica:
+
+\begin{itemize}
+ \item[a.] 120000000
+ \item[b.] 0.00045578
+ \item[c.] 45560000
+ \item[d.] 0.0000004566
+ \item[e.] 0.00000003345
+ \item[f.] 7459980000000000000000
+ \item[g.] 5670000000000000000
+ \item[h.] 0.0000000000278
+ \item[i.] 780000000000000000
+ \item[j.] 5.06004 
+ \item[k.] 0.0007456
+ \item[l.] 0.0034521
+\end{itemize}
+
+Realice las operaciones siguientes y expresar la respuesta en notación científica:
+
+\begin{itemize}
+ \item[j.] $(2,5\times10^{9})\times(4\times10^{-6})$
+ \item[k.] $1.2\times10^{-7}-4.2\times10^{-5}$ + $30,4\times10^{-4}$
+ \item[l.] $(5,5\times10^{14}-35,4\times10^{13})\times 8.9\times10^{-5}$
+ \item[m.] $\frac{7,2\times10^{-30}}{0,008\times10^{-24}}$
+ \item[n.] $\frac{0,081\times10^{20}}{0,9\times10^{-34}}$
+\item[o.]  $\frac{3,2\times10^{23}}{0,004\times10^{16}}$-$\frac{0,45\times10^{-6}}{0,55\times10^{-10}}$
+\item[p.] $\frac{0,081\times10^{20}}{0,9\times10^{-34}}\times(2,5\times10^{12})$
+\item[q.] $\sqrt{9,8\times10^{-7}+7,5\times10^{-6}+0.52\times 10^{-6}}$
+\item[r.] $((0.00005)^3\times (0.003\times 10^{-3})^{-2})^3$
+\end{itemize}
+
+\section{Magnitudes y Medidas:}
+
+Aquella necesidad del hombre por analizar e interpretar de manera objetiva su entorno físico concibio la necesidad de medir 
+aquellas cosas que sus sentidos perciben de este mundo.
+
+Y a todo ello que el hombre puede medir se lo denomina \textbf{magnitud}. Y a la acción de medir se trata de la comparación de dos 
+magnitudes de la misma naturaleza, asignandola a una de ellas como patrón de medida, y de esta manera a aquello que es medible se 
+le asigna un número y así es susceptible de un análisis posterior.
+
+\subsection{Sistema Internacional de Medidas (S.I.)}
+
+Es un conjunto de reglas, normas y disposiciones que rigen a nivel mundial para tener uniformidad en la determinación de una 
+medida. Constituye el sistema de unidades adoptado por la Undécima Conferencia General de Pesos y Medidas celebrada en 1960. 
+
+\subsection{Tipos de magnitudes:}
+
+Se dividen en:\\
+
+\textbf{Fundamentales:} Son aquellas que no pueden definirse o derivarse de otras magnitudes, sino más bien ya son de por si 
+primarias, es decir, no se definen en función de otras magnitudes, y entre ellas por ejemplo son: masa, la longitud, el tiempo, la 
+temperatura, la intensidad luminosa, la cantidad de sustancia y la intensidad de corriente.\\
+
+\textbf{Derivadas:} Son aquellas magnitudes que se derivan por la combinación de las magnitudes fundamentales, por ejemplo: el 
+área, el volumen, el peso, la energía, la velocidad, etc.
+
+Y así, la comunidad científica se ha puesto de acuerdo para seguir unos mismos entandares y unidades de medidas ya esto se lo 
+llama: El Sistema Internacional de Unidades (SI), el cual utiliza por convención siete magnitudes fundamentales: 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcc}
+\hline
+Magnitud & Unidad de medida & Símbolo\\
+\hline
+Masa & kilogramo & kg \\
+Longitud & metro & m\\
+Tiempo & segundo & s\\
+Temperatura & kelvin & K\\
+Intensidad luminosa & candela & cd\\
+Cantidad de sustancia & mol & mol\\
+Intensidad de corriente & amperio & A\\
+\hline
+\end{tabular}
+\caption{Tabla de magnitudes fundamentales.} 
+\end{table}
+
+Tambíen tenemos otro tipo de magnitudes que son complementarias a las antes ya mencionadas:
+
+\begin{table}[h]
+ \begin{center}
+ \begin{tabular}{llc}
+ \hline
+Magnitud & Unidad de medida & Símbolo\\
+\hline
+Ángulo plano & radián & rad\\
+Ángulo sólido & estereoradián & sr\\
+\hline
+ \end{tabular}
+ \caption{Tabla de magnitudes complementarias.}
+ \end{center}
+\end{table}
+
+\section{Múltiplos y submúltiplos:}
+
+Para representar las medidas de diferentes magnitudes las cuales presentan cantidades muy grandes o muy pequeñas hace falta 
+establecer un estándar de prefijos de múltiplos y submúltiplos de la siguiente manera:
+
+\begin{table}[h]
+ \begin{center}
+\begin{tabular}{rccc}
+\hline
+Factor numérico & Exponente & Prefijo & Símbolo\\
+\hline
+1000 000 000 000 000 000 & $10^{18}$ & exa & E\\
+1000 000 000 000 000 & $10^{15}$ & peta & P\\
+1000 000 000 000 & $10^{12}$ & tera & T\\
+1000 000 000 & $10^{9}$ & giga & G\\
+1000 000 & $10^{6}$ & mega  & M\\
+1000 &$10^{3}$ & kilo & k\\
+100 & $10^{2}$ & hecto & h\\
+10 & $10^{1}$  & deca & da\\
+\hline
+\end{tabular}
+\caption{Tabla de múltiplos del SI.}
+ \end{center}
+\end{table}
+ 
+\begin{table}[h]
+ \begin{center}
+\begin{tabular}{rccc}
+\hline
+Factor Numérico & Exponente & Prefijo & Símbolo\\
+\hline
+0.1 & $10^{-1}$ & deci & d\\
+0.01 & $10^{-2}$ & centi & c\\
+0.001 & $10^{-3}$ & mili & m\\
+0.000001 & $10^{-6}$ & micro & $\mu$\\
+0.000000001 & $10^{-9}$ & nano  & n\\
+0.000000000001 & $10^{-12}$ & pico & p\\
+0.000000000000001 & $10^{-15}$ & femto & f\\
+0.000000000000000001 & $10^{-18}$  & atto & a\\
+\hline
+\end{tabular}
+\caption{Tabla de submúltiplos del SI.}
+ \end{center}
+ \end{table}
+ 
+\subsection{Problemas de conversión de unidades:}
+Convertir las siguientes magnitudes a lo que se indica:
+\begin{itemize}
+ \item[1.] 3 cm a m.
+ \item[2.] 3.4 $\mu s$ a minutos.
+ \item[3.] 4 kg a gramos.
+ \item[4.] 5,1 ns a horas.
+ \item[6.] 5 dm a cm.
+ \item[7.] 19 mg a kg.
+ \item[8.] 43 fs a ns.
+ \item[9.] 14 ps a $\mu s$.
+ \item[10.] 74 libras a gramos.
+ \item[11.] 11 $cm^2$ a $m^2$.
+ \item[12.] 6,7 $m^3$ a $cm^3$.
+ \item[13.] 0,967 $\mu m^2$ a $mm^3$.
+ \item[14.] 54 m/s a km/h.
+ \item[15.] 78 km/h a m/s.
+ \item[16.] 86 cm/s a m/min.
+ \item[17.] 25 km/h a cm/s.
+ \item[18.] 32 $kg/m^3$ a $g/cm^3$.
+ \item[19.] 92 $m^3/s$ a $cm^3/s$.
+ \item[20.] 73 $g/cm^2$ a $kg/m^2$.
+\end{itemize}
+
+\chapter{Cantidades escalares y vectoriales:}
+
+\textit{``Dios algunas veces geometriza''.} \textbf{Platón} 
+\vspace{1.00cm}
+
+Cuando alguien empieza sus primeros pasos en la Física se encontrará con dos tipos de cantidades bien definidas como son: las 
+cantidades \textbf{escalares} y \textbf{vectoriales}.\\
+
+\section{Escalares}
+
+Las cantidades escalares se definen simplemente por un valor numérico o algún valor numérico con alguna unidad de 
+medida. Es decir, se trata de simplemente de un número que puede estar acompañado de alguna unidad de medida. Tambíen 
+en la Física se lo conoce a los escalares como tensores de grado cero. Ejemplos: 10 cm, 3, -4,3, 4 kg, 34 km/h, etc.
+
+\section{Vectores}
+
+Las cantidades vectoriales en cambio necesitan para definirsa tres características: módulo, dirección y sentido. 
+Gráficamente a las cantidades vectoriales se las representa por medio de una flecha.\\
+
+Los vectores se representan geométricamente con flechas y se le asigna por lo general una letra que en su parte 
+superior lleva una pequeña flecha de izquierda a derecha como se muestra en la figura siguiente:  
+
+\begin{center}
+ \includegraphics[scale = 0.4]{images/vector.png}
+ % vector.png: 338x218 px, 72dpi, 11.92x7.69 cm, bb=0 0 338 218
+\end{center}
+
+\textbf{Módulo}\\
+
+El módulo de un vector queda definido como la longitud o tamaño que tiene la flecha que lo representa gráficamente y se 
+representa como A, $|\vec{A}|$ ó $\|\vec{A}\|$. También denominado como la intensidad del vector.\\
+
+\textbf{Dirección:}\\
+
+Es el ángulo que se forma desde la horizontal hasta el vector tomando el sentido antihorario como positivo y negativo 
+en el sentido horario.\\
+
+\textbf{Sentido:}\\
+
+El sentido se refiere a la línea acción del vector, ó mejor dicho hacia donde apunta la flecha del vector.\\
+
+Todo vector tiene un vector opuesto que se trata de un vector con el mismo módulo pero con su sentido contrario y se 
+simboliza con un signo menos $-\vec{A}$.\\
+
+\subsection{Representación en coordenadas cartesianas:}
+
+\begin{center}
+ \includegraphics[scale = 0.3]{images/Vector_in_2D_space.png}
+ % Vector_in_2D_space.png: 646x733 px, 96dpi, 17.09x19.39 cm, bb=0 0 484 550
+\end{center}
+
+En Matemáticas y Física a los vectores los representamos mediante un sistema de referencia cartesiano, y así de esta 
+manera todo vector posee lo que se denomina coordenadas rectángulares. Estas componentes son las proyecciones del 
+vector en cada uno de los ejes cartesianos, en otros palabras, son los vectores que se forman al proyectar 
+perpendiculares desde el punto extremo del vector hacia los ejes coordenados.\\
+
+
+Las coordenadas cartesianas o rectángulares de un vector $\vec{A}$, se calcula como:
+
+\begin{equation}
+A_x = Acos(\theta) \quad y \quad A_y = Asen(\theta) 
+\end{equation}
+
+donde $A_x$ es la componente del vector $\vec{A}$ en el eje de las $x$, y $A_y$ es la componente del mismo vector en el 
+eje de las $y$.\\
+
+La dirección del vector se lo encuentra de la siguiente manera:
+
+\begin{equation}
+ \theta = tan^{-1}(\frac{A_y}{A_x})
+\end{equation}
+
+, y por su puesto el módulo del vector queda definido en función de sus componentes como:
+
+\begin{equation}
+ |\vec{A}| = \sqrt{A_x^2 + A_y^2}
+\end{equation}
+
+\subsubsection{Ángulos y cosenos directores:}
+
+Son aquello ángulos que parten desde los ejes coordenados positivos hacia el vector y cuyo valor esta en el intervalo 
+de $0^\circ$ a $180^\circ$. El que parte desde el eje de las abcisas se simboliza como $\alpha$, mientras que el que 
+parte desde el eje de las ordenadas se le simboliza como $\beta$.\\
+
+Y a los cosenos directores son los cosenos de los ángulos directores simplemente:
+
+\begin{equation}
+ cos(\alpha) =\frac{A_x}{A}  \quad y \quad cos(\beta)=\frac{A_y}{A}
+\end{equation}
+
+\subsection{Representación en coordenadas polares:}
+
+\begin{center}
+ \includegraphics[scale = 0.77]{images/picture1-0.png}
+ % picture1-0.png: 250x227 px, 72dpi, 8.82x8.01 cm, bb=0 0 250 227
+\end{center}
+
+Los vectores usualmente también se los representa en función de su módulo y dirección:
+
+\begin{equation}
+ \vec{A} = (|\vec{A}|, \theta)
+\end{equation}
+
+\subsection{Representación en coordenadas geográficas:}
+
+\begin{center}
+ \includegraphics[angle=0.5]{images/vector2.jpg}
+ % vector2.jpg: 234x201 px, 100dpi, 5.94x5.11 cm, bb=0 0 168 145
+\end{center}
+
+Un vector queda representado en coordenadas geográficas indicando primero su módulo, luego indicando a cual polo sea el 
+Norte o el Sur al cual el vector está más cercano, posteriormente el ángulo desde ese eje hacia el vector y finalmente 
+hacia que dirección sea Este o Oeste queda más cercana el vector.
+
+\subsection{Suma y resta de vectores:}
+
+Ya que las cantidades vectoriales poseen módulo y dirección, la suma de estas cantidades no sigue las reglas de la suma 
+tradicional de los escalares.
+
+\subsubsection{Método del paralelogramo:}
+
+\begin{center}
+ \includegraphics[scale=0.6]{images/suma-vectores-metodo-paralelogramo.jpg}
+ % suma-vectores-metodo-paralelogramo.jpg: 360x263 px, 96dpi, 9.52x6.96 cm, bb=0 0 270 197
+\end{center}
+
+El método del paralelogramo es un procedimiento gráfico sencillo que permite hallar la suma de dos vectores.
+
+\begin{itemize}
+ \item Primero se dibujan ambos vectores a escala, con el punto de aplicación común.
+ \item Seguidamente, se completa un paralelogramo, dibujando dos segmentos paralelos a ellos.
+ \item El vector suma resultante ($\vec{a} + \vec{b}$) será la diagonal del paralelogramo con origen común a los dos 
+ vectores originales.
+\end{itemize}
+
+\subsubsection{Método cabeza - cola:}
+
+\begin{center}
+ \includegraphics[scale=0.7]{images/suma-vectores-metodo-cabeza-cola.jpg}
+ % suma-vectores-metodo-cabeza-cola.jpg: 410x261 px, 96dpi, 10.85x6.91 cm, bb=0 0 308 196
+\end{center}
+
+Se trata de una variante del método del paralelogramo. Se desplaza el vector $\vec{b}$ paralelamente hasta el extremo 
+del vector $\vec{a}$. El lado que completa el triángulo es el vector suma ($\vec{a} + \vec{b}$), cuyo inicio está en el 
+extremo del primer vector $\vec{a}$ y su fin en el final del segundo vector sumando $\vec{b}$. 
+    
+\subsubsection{Método analítico:}     
+
+A diferencia de los dos anteriores métodos, este se trata de un método analítico algebraico que no requiere de la 
+realización del gráfico y por tanto es el más práctico y útil. Este método se trata de que primero los vectores a sumar 
+deben estar expresados en sus coordenadas cartesianas y posteriormente se suman algebraicamente las componentes de los 
+vectores en el eje x y así mismo en el eje y.
+
+\begin{tcolorbox}
+ Si $\vec{a} = a_x\vec{i}+a_y\vec{j}$ y $\vec{b} = b_x\vec{i}+a_y\vec{j}$, entonces el vector suma o resultante de los 
+dos es: $\vec{c} =\vec{a}+\vec{b}$ tal que: $\vec{c} = (a_x + b_x)\vec{i} +(a_y+b_y)\vec{j}$. 
+\end{tcolorbox}
+
+\subsubsection{Propiedades de la suma:}
+
+\textbf{Propiedad asociativa:}
+
+\begin{equation}
+ \vec{a} + (\vec{b} + \vec{c}) = (\vec{a} + \vec{b}) + \vec{c} = (\vec{a} + \vec{c}) +\vec{b} 
+ \end{equation}
+
+\textbf{Propiedad conmutativa:}
+\begin{equation}
+ \vec{a} + \vec{b} = \vec{b} + \vec{a}
+\end{equation}
+
+\textbf{Elemento opuesto:}
+
+\begin{equation}
+ \vec{a} + \vec{b} = \vec{0} \quad \text{si y solo si}\quad \vec{b} =-\vec{a} 
+\end{equation}
+
+\textbf{Elemento neutro:}
+
+\begin{equation}
+ \vec{a} + \vec{0} = \vec{a} 
+\end{equation}
+
+\subsection{Producto escalar o punto:}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.7]{images/productoescalar.png}
+ % productoescalar.png: 200x200 px, 72dpi, 7.06x7.06 cm, bb=0 0 200 200
+ \caption{Ilustración geométrica del producto entre dos vectores.}
+ \label{fig:escalar}
+\end{figure}
+
+Este producto se da entre dos vectores y su resultado es una cantidad escalar. Este operación se realiza de la 
+siguiente manera:
+
+\begin{tcolorbox}
+Sean $\vec{a} =a_x\vec{i}+a_y\vec{j}$ y $\vec{b}=b_x\vec{i}+b_y\vec{j}$ dos vectores entonces el producto escalar 
+entre ellos se define como $\vec{a}\cdot\vec{b}=|\vec{a}||\vec{b}|cos(\theta)= a_xb_x+a_yby$, donde $\theta$ es el 
+ángulo formado entre los dos vectores.
+\end{tcolorbox}
+
+Así, es obvio que el producto escalar entre dos vectores que son perpendiculares es cero debido a que el ángulo entre 
+ellos es de $90^\circ$.\\
+
+Este producto tiene una interpretación geométrica que corresponde al área del paralelogramo formado entre los dos vectores.\\
+
+A través del uso de este producto se puede calcular la proyección de un vector sobre otro de la siguiente manera:
+
+\begin{tcolorbox}
+La proyección de un vector $\vec{b}$ sobre otro vector $\vec{a}$ se define como: $\text{proj}_{\vec{a}}\vec{b} 
+=|\vec{b}|cos(\theta)= \frac{\vec{a}\cdot\vec{b}}{|\vec{a}|}$.
+\end{tcolorbox}
+
+\subsection{Producto vectorial de vectores:}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.1]{images/1200px-Cross_product_parallelogram.png}
+ % 1200px-Cross_product_parallelogram.svg.png: 1200x938 px, 72dpi, 42.33x33.09 cm, bb=0 0 1200 938
+ \caption{Ilustración del producto vectorial entre vectores.}
+ \label{fig:vectorial}
+\end{figure}
+
+Este producto se da entre dos vectores dando como resultado otro vector. Este producto se define de la siguiente manera:
+
+\begin{tcolorbox}
+ Sean $\vec{a} =a_x\vec{i}+a_y\vec{j}+a_z\vec{k}$ y $\vec{b}=b_x\vec{i}+b_y\vec{j}+b_z\vec{k}$ dos vectores entonces el 
+ producto vectorial entre ellos se define como: 
+ 
+ \[
+\vec{a}\times\vec{b} =
+\begin{vmatrix}
+\vec{i} & \vec{j} & \vec{k} \\ 
+a_x & a_y & a_z \\
+b_x & b_y & b_z
+\end{vmatrix} = (a_yb_z-b_ya_z)\vec{i}-(a_xb_z-a_zb_x)\vec{j}+(a_xb_y-b_xa_y)\vec{k}
+\]
+\end{tcolorbox}
+
+Siendo el vector $\vec{a}\times\vec{b}$ perpendicular a los vectores $\vec{a}$ y $\vec{b}$, y que cuyo módulo es:
+
+\begin{equation}
+ |\vec{a}\times\vec{b}|=|\vec{a}||\vec{b}|sen(\theta)
+\end{equation}
+
+Cabe resaltar que para este producto es necesario utilizar el eje coordenado espacial $z$ cuyo vector base en 
+$\vec{k}$. En cuanto a la dirección del vector resultante está dada por la regla de la mano derecha. Por otro lado este 
+producto da como resultado igual a cero si los vectores operandos son paralelos.
+
+\begin{tcolorbox}
+La dirección del vector $\vec{a}\times\vec{b}$ estaría definida por la dirección del pulgar, cerrando los demás dedos en torno al 
+vector $\vec{a}$ primero y siguiendo con el vector $\vec{b}$.
+\end{tcolorbox}
+
+Así, cabe destacar que se cumple lo siguiente $\vec{a}\times\vec{b}=-\vec{b}\times\vec{a}$. También el módulo del producto 
+vectorial de dos vectores equivale al área del paralelogramo construído en estos vectores.
+
+\subsection{Problemas de vectores:}
+
+\begin{itemize}
+ \item[1.] Encuentre el módulo y dirección del vector $\vec{a}= \vec{i} - \vec{j}$.
+ \item[2.] Encuentre el vector unitario del anterior problema.
+ \item[3.] Calcula el valor de k sabiendo que el módulo del vector v= (k, 3) es 5.
+ \item[4.] Hallar las coordenadas del punto C, sabiendo que B(2, ?2) es el punto medio de AC, A(?3,
+1).
+ \item[5.] Dos vectores forman entre sí un ángulo de 60°, si el valor de su resultante es de 156 unidades, y la magnitud de uno de 
+los vectores componentes es de 100 unidades, ¿cuál será la magnitud del otro vector?
+ \item[6.]Un alumno camina 50 m hacia el este, a continuación 30 m hacia el sur, después 20 m hacia el oeste, y finalmente, 10 m 
+hacia el norte. Determina el vector desplazamiento desde el punto de partida hasta el punto de llegada. (incluyendo el ángulo que 
+determina su dirección)
+ \item[7.] Encuentre la suma de los vectores $\vec{c}=\vec{i}+\vec{j}$ y $\vec{d}=2\vec{i}-3\vec{d}$.
+ \item[8.] Encuentre también la diferencia.
+ \item[9.] Encuentre el vector unitario del vector que es opuesto al siguiente vector $\vec{S} =  10\vec{i}-7\vec{j}$.
+ \item[10.] Un vector hace un ángulo de $240^\circ$ en sentido antihorario con el eje de las abcisas y el valor de su componente 
+en ese mismo eje es de 200 m, halle el vector unitario de ese vector.
+ \item[11.] Encuentre el módulo del siguiente vector: $5\vec{d}-2\vec{c}$, donde $d=(34 m/s, 330^\circ)$ y $c = (54m/s, S20^\circ 
+O)$.
+ \item[12.] Determina las coordenadas geográficas del siguiente vector: $\vec{R}=(23 m/s,N45^\circ E)$.
+ \item[13.] Determina las coordenadas polares del siguiente vector: $\vec{T}=(7\vec{i}-4\vec{j})kgf$.
+ \item[14.] Determina las coordenadas cartesianas del vector: $\vec{h}=(13,330^\circ)$.
+\item[15.] Calcula el producto escalar entre $\vec{a}=6\vec{i}-7\vec{j}$ y $\vec{b}=-4\vec{i}+10\vec{j}$.
+\item[16.] Determina si $\vec{a} = 12\vec{i}-13\vec{j}$ es perpendicular al vector $\vec{b}=4\vec{i}-3\vec{j}$.
+\item[17.] Determine la proyección del vector $\vec{r} = (23 km, N40^\circ O)$ sobre el vector $\vec{q}=(40km,230^\circ)$.
+\item[18.] Determine el área del paralelogramo formado por los vectores $\vec{u}=(1,1)$ y $\vec{v}=(1,-1)$.
+\item[19.] Siendo los vectores $\vec{a} = (2,3)$, $\vec{b} = (-3,5)$ y $\vec{c} = (4,-1)$, calcular lo siguiente: 
+$3\vec{a}\cdot\frac{1}{2}(\vec{c}+\vec{b})-7\vec{b}\cdot\vec{c}+5\vec{a}\cdot(\vec{c}-\vec{a})$ 
+\item[20.] Dado los vectores $\vec{v} = 3\vec{i}-\vec{j}+4\vec{k}$ y $\vec{w}=-\vec{i}+3\vec{j}+5\vec{k}$, calcule lo 
+siguiente: $\frac{1}{2}\vec{v}\times\vec{w}$.
+\item[21.] Sabiendo que $\vec{A} = (m - 1) \vec{i} + (2 m + 3) \vec{j}$ y $\vec{B} = (m - 2) \vec{i} + (2 m - 19) \vec{j}$. 
+Encuentre el número real m para que se cumpla que $3 \vec{A} + \vec{B} = 0$.
+
+\end{itemize}
+
+\chapter{Física}
+
+\textit{``Sería muy triste ser un átomo en el universo sin los físicos. Y los físicos están hechos de átomos. Un físico es la 
+forma de un átomo de saber que hay átomos.''} \textbf{George Wald}
+\vspace{1.0 cm}
+
+\section{Física: Filosofía Natural}
+
+La Física es parte de las Ciencias Naturales, ésta ciencia estudia a la energía, la materia, el tiempo y el espacio en toda su 
+comportamiento, estructura, e interacciones. El término \textbf{Física} proviene del lat. physica, y este del griego 
+$\varphi\upsilon\sigma\iota\kappa o\varsigma$, 'natural, relativo a la naturaleza'.\\
+
+Una muy precisa definición de Física es la siguiente:
+
+\begin{tcolorbox}
+Ciencia que estudia las leyes fundamentales que rigen el Universo.
+\end{tcolorbox}
+
+Entiendiéndose como Universo el conjunto de cuerpos celestes y materia interestellar que se encuentra en el espacio. También otra 
+precisa definición es la siguiente:
+
+\begin{tcolorbox}
+Ciencia natural que estudia los fenómenos físicos y lo que ocurre en la naturaleza, los componentes fundamentales del Universo, la 
+energía, la materia, el espacio-tiempo y las interacciones fundamentales. La Física es una ciencia básica estrechamente vinculada 
+con las matemáticas y la lógica en la formulación y cuantificación de sus principios.
+\end{tcolorbox}
+
+En esta ciencia se estudia aquellos fenómenos llamados físicos en los cuales la estructura química de las materia permanence 
+inalterada. Ejemplos de fenómenos físicos: la ebullición del agua, la caída de los cuerpos, la transmición del calor, la 
+evaporización de los líquidos, etc.\\
+
+Esta disciplina incentiva competencias, métodos y una cultura científica que permiten comprender nuestro mundo físico y viviente, 
+para luego actuar sobre él. Sus procesos cognitivos se han convertido en protagonistas del saber y hacer científico y tecnológico 
+general, ayudando a conocer, teorizar, experimentar y evaluar actos dentro de diversos sistemas, clarificando causa y efecto en 
+numerosos fenómenos. De esta manera, la física contribuye a la conservación y preservación de recursos, facilitando la toma de 
+conciencia y la participación efectiva y sostenida de la sociedad en la resolución de sus propios problemas.\\
+
+Y como podemos apreciar nos encontramos viviendo en un mundo tecnológico y científico, siendo la física parte fundamental del 
+mundo, ya que esta abarca desde lo infinitamente pequeño, como es el caso de la física de las partículas, a lo infinitamente 
+grande, como es el caso de la astrofísica. Es por eso que no debe ser extraño para nosotros que la física se encuentre presente en 
+cada ámbito del progreso técnico y científico.\\
+
+La Física trata de responder dos grandes preguntas: ¿Cómo funciona el Universo? y ¿Por qué funciona?. La respuesta o las respuesta 
+a la primera pregunta se manifiesta mediante el surgimiento de las leyes físicas, que cuyo sueño científico es lograr llegar a una 
+sóla ley de unificación, mientras que la segunda pregunta se ve responde mediante el reconocimiento de principios físicos que a su 
+vez responde a la inevitabilidad de los fenómenos en el Universo.
+
+\chapter{Cinemática}
+
+\textit{``Si en un instante determinado conociésemos la situación y la velocidad exactas de todas las partículas del universo, 
+podríamos deducir por cálculos todo lo pasado y lo futuro de él.''}  \textbf{Laplace}
+
+\section{El movimiento}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.3]{images/movimiento.jpg}
+ \caption{Ilustración del movimiento de una tenista.}
+ \label{fig:vectorial}
+\end{figure}
+
+El estudio de la Física comienza con el fenómeno más fundamental que existe en el Universo el cual es el movimiento. Cada 
+componente del Universo está en movimiento, incluso en a temperaturas muy bajas cercanas al cero absoluto el movimiento no cesa, y 
+es por eso que el movimiento es el fenómeno más fundamental del Universo y el primer apartado a estudiar en Física.\\
+
+La Cinemática es la rama de la Física que estudia a el movimiento sin analizar sus causas, es decir, estudia las magnitudes que 
+describen la geometría del movimiento de los cuerpo.\\ 
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.37]{images/sistema_inercial_no_inercial.jpg}
+ % sistema_inercial_no_inercial.jpg: 650x270 px, 72dpi, 22.93x9.52 cm, bb=0 0 650 270
+ \caption{Ilustración de tres sistemas de referencia diferentes.}
+\end{figure}
+
+Para estudiar el fenómeno del movimiento se hace referencia a uno o más observadores que analizan el movimiento y realizan las 
+medidas de las magnitudes involucradas en el fenómeno, por ello es necesario plantear un sistema de referencia desde el cual el 
+observador u observadores hacen sus medidas, en general el sistema de referencia es el plano cartesiano.\\
+
+Una vez ya ubicado el sistema de referencia lo más natural es observar que el cuerpo o partícula en movimiento tendrá diferentes 
+posiciones cuando el tiempo avanza, es por tanto la necesidad de definir lo que se llama vector posición.\\ 
+
+\textbf{Vector posición:} Es el vector que indica la posición del cuerpo respecto a un sistema de referencia. Este vector tiene 
+su origen en el origen del sistema de referencia (donde se supone que está un observador) y su extremo donde está el cuerpo o 
+partícula de estudio.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{images/posicion.jpg}
+ % vector_de_posición.jpg: 200x164 px, 96dpi, 5.29x4.34 cm, bb=0 0 150 123
+ \caption{Ilustración del vector posición.}
+\end{figure}
+
+Así, si tenemos dos posiciones diferentes del cuerpo o partícula en movimiento se puede definir lo que se llama desplazamiento.\\
+
+\textbf{Desplazamiento:}\\
+
+Se entiende por desplazamiento el vector o segmento recto orientado que une la posición inicial con otra posición posterior en el 
+tiempo del cuerpo en movimiento; así, el origen del vector posición es la posición inicial del cuerpo y el extremo del vector 
+desplazamiento se halla en la posición final del cuerpo tomada en cuenta. El vector desplazamiento ($\Delta \vec{r}$) resulta de 
+hecho la resta del vector posición final ($\vec{r_f}$) con la posición inicial ($\vec{r_o}$).
+
+\begin{equation}
+ \Delta \vec{r} = \vec{r_f}-\vec{r_o}
+\end{equation}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{images/cinematica.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del vector desplazamiento.}
+\end{figure}
+
+\textbf{Trayectoria:}\\
+
+La trayectoria es el camino por el cual el cuerpo en movimiento\footnote{Muchas veces a un cuerpo en movimiento también se le 
+dice móvil en Física.} se mueve.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.4]{images/trayectoria.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la trayectoria de un avión de papel.}
+\end{figure}
+
+\textbf{Distancia:}\\
+
+En Física, la distancia es la longitud total recorrida por un objeto móvil en su trayectoria. Como tal, es una magnitud escalar, 
+y, por lo tanto, es expresada en unidades de longitud (En el SI en metros).\\
+
+\textbf{Velocidad:}\\
+
+La velocidad ($\vec{v}$) es una cantidad vectorial muy usada en Física que mide el ritmo de cambio de la distancia recorrida por 
+un móvil con respecto al tiempo, y en este vector brinda la idea de cuan rápido o tan despacio se mueve un cuerpo. El módulo de 
+la velocidad se llama rápidez o celeridad, generalemente se simboliza simplemente como $v$ y se la mide en el SI en $m/s$. 
+
+\begin{equation}
+ v = \frac{\text{distancia recorrida}}{\text{tiempo necesario para el movimiento}} \quad [m/s]
+\end{equation}
+
+\begin{equation}
+ \vec{v} = \frac{\Delta \vec{r}}{\Delta t}
+\end{equation}
+
+Una de las principales características del vector velocidad es que siempre es tangente a la trayectoria que sigue el móvil.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.4]{images/vectorvelocidad.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del vector velocidad.}
+\end{figure}
+
+\textbf{Velocidad instantánea:}\\
+
+ Es la que tiene el cuerpo en un instante específico, en un punto determinado de su trayectoria. Se define la velocidad 
+instantánea o simplemente velocidad como el límite de la velocidad media cuando el intervalo de tiempo considerado tiende a 0. 
+Esta velocidad es la que marca el velocímetro dentro de un auto por ejemplo.
+
+ \begin{equation}
+ \vec{v}=\lim_{\Delta t \to 0}\frac{\Delta \vec{r}}{\Delta t}\quad [m/s]
+ \end{equation}
+
+Una vez comprendido estos conceptos fundamentales del movimiento es tiempo de analizar el movimiento más simple que existe: 
+\textit{El movimiento rectilíneo}.
+
+
+\chapter{Movimiento Rectilíneo:}
+
+\textit{``Al principio vienen necesariamente a la mente la fantasía y la fábula. Desfilan después los cálculos matemáticos, y solo 
+al final la realización corona el pensamiento.''} \textbf{Konstantin Tsiolkovski.} 
+\vspace{1.0 cm}
+
+Un movimiento es rectilíneo cuando describe una trayectoria recta. En ese tipo de movimiento la aceleración y la velocidad son 
+siempre paralelas. Usualmente se estudian dos casos particulares de movimiento rectilíneo: Uniforme y el uniformemente variado.
+
+\section{Movimiento Rectilíneo Uniforme (MRU):}
+ 
+Es el movimiento en que un cuerpo móvil se mueve a tráves de una trayectoria recta (una línea recta) y con una velocidad 
+constante; lo que implica que este cuerpo con este tipo de movimiento recorre distancias iguales en tiempos iguales.Esto implica 
+que la velocida en cualquier instante cualesquiera siempre
+ tendrá el mismo valor.\\
+
+En este movimiento apenas se tiene una ecuación de movimiento:
+
+\begin{equation}
+ v = \frac{d}{t}\quad [m/s]
+\end{equation}
+
+donde $v$ es la velocidad del cuerpo, $d$ la distancia recorrida y $t$ el tiempo recorrido para cubrir dicha distancia. Y de 
+forma vectorial se tiene que:
+
+\begin{equation}
+ \vec{v} = \frac{\Delta\vec{r}}{\Delta t}
+\end{equation}
+
+es de notar que como el movimientoes rectilíneo la distancia recorrida por el cuerpo coindide con el módulo del vector 
+desplazamiento del movimiento.\\
+ 
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.8]{images/Movimiento_rectilineo_uniforme.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del vector velocidad.}\label{mru}
+\end{figure} 
+ 
+La ilustración \ref{mru} muesta a un auto con MRU que cada 2 segundos recorre una distancia de 8 metros, esto  corresponde a 
+decir que su velocidad es de $v = \frac{8m}{2s} = 4 m/s$, por lo cual despues de 6 segundos el auto habrá recorrido 24 metros.
+
+\section{Movimiento Rectilíneo Uniformemente Variado:}
+ 
+En este movimiento al contrario que el MRU la velocidad con la que se mueve el móvil ya no es constante en el tiempo, y existe 
+una nueva cantidad cinemática que da de cuenta de este cambio llamada \textit{aceleración}. 
+
+\subsection{La aceleración:}
+
+La aceleración $a$ es una cantidad vectorial que mide el ritmo de cambio de la velocidad con respecto al tiempo. Es decir, esta 
+cantidad es una medida de como cambia la velocidad del móvil. Y esta cantidad se calcula así:
+
+\begin{equation}
+ \vec{a}=\frac{\Delta \vec{v}}{\Delta t}\quad [m/s^2] 
+ \end{equation}
+ 
+siendo $\Delta \vec{v}=\vec{v_f}-\vec{v_0}$ la diferencia entre velocidades (desde una velocidad inicial $\vec{v_0}$ hasta una 
+velocidad final $\vec{v_f}$) realizado por el cuerpo en el intervalo de tiempo $\Delta t$.\\
+
+La principal característica del MRUV es que posee una aceleración que es constante en el tiempo, es decir, la aceleración del 
+cuerpo con MRUV siempre tendrá el mismo valor para cualquier instante de tiempo. Por ejemplo la caída libre de un cuerpo, con 
+aceleración de la gravedad constante.\\
+
+El movimiento rectilíneo uniformemente variado puede ser acelerado o desacelerado (retardado):\\
+
+\textbf{Acelerado:} El movimiento es acelerado cuando la aceleración que experimenta el cuerpo en movimiento es de signo positivo 
+($a > 0$), y esto quiere decir que con el paso del tiempo el cuerpo se ``acelera'': su velocidad va aumentando en el tiempo.\\
+
+\textbf{Retardado:} Es cuando la aceleración que experimenta el cuerpo en movimiento es de signo negativo ($a < 0$), y esto 
+quiere decir que con el paso del tiempo el cuerpo se ``desacelera'' o se ?frena?: su velocidad va disminuyendo en el tiempo.\\
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.7]{images/mruv.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de una automóvil con MRUV.}\label{mruv}
+\end{figure} 
+
+En la figura \ref{mruv} se observa como un automóvil con MRUV cada 2 segundos incrementa su velocidad en $\Delta v = 15 m/s$, y 
+así por tanto su aceleración es $a = \frac{\Delta v}{\Delta t} = \frac{15 m/s}{2s} = 7.5 m/s^2$, y como en este caso como $a>0$ 
+se trata de un movimiento acelerado.\\
+
+Este movimiento esta regido por cuatro ecuaciones de movimiento siguientes:
+
+\begin{equation}
+ v_f = v_o + at
+\end{equation}
+
+\begin{equation}
+ v_f^2 = v_0^2 + 2ad
+\end{equation}
+
+\begin{equation}
+ d = (\frac{v_f+v_0}{2})t
+\end{equation}
+
+\begin{equation}
+ d = v_0t+ \frac{1}{2}at^2
+\end{equation}
+
+Dónde: $v_f$ : es la velocidad final del cuerpo en movimiento (se mide en $[m/s]$), $v_0$ : es la velocidad inicial del cuerpo en 
+movimiento (se mide en $[m/s]$), $a$ : es la aceleración del cuerpo en movimiento (se mide en $[m/s 2]$), $t$: es el tiempo que 
+emplea el cuerpo durante el movimiento (se mide en $[s]$), d: es la distancia recorrida por el cuerpo (se mide en $[m]$). Estas 
+ecuaciones están planteadas de forma escalar, es decir, relacionan los módulos de las magnitudes vectoriales del cuerpo en 
+movimiento, pero es importante notar que estas ecuaciones también se pueden plantear de forma vectorial de la siguiente manera: 
+
+\begin{equation}
+\vec{v_f} = \vec{v_0} + \vec{a}t 
+\end{equation}
+
+\begin{equation}
+ v_f^2 = v_0^2+2a\Delta r
+\end{equation}
+
+\begin{equation}
+ \Delta \vec{r} = (\frac{\vec{v_f}+\vec{v_0}}{2})t
+\end{equation}
+
+\begin{equation}
+ \Delta \vec{r} = \vec{v_0}t + \frac{1}{2}\vec{a}t^2
+\end{equation}
+ 
+Observando detenidamente estas ecuaciones se infiere que cada ecuación tiene cuatro diferentes magnitudes relacionadas 
+a través de ella, y por tanto conocer cualquiera de ella está en función de las otras tres, es decir, es suficiente con 
+este tipo de ecuaciones encontrar una magnitud conociendo otras tres distintas (este es un dato importante en el 
+momento 
+de resolver problemas relacionados con el MRUV).
+
+\section{Caída libre y lanzamiento vertical de los cuerpos:}
+
+Un caso especial de MRUV es el movimiento de los cuerpos cuando están exclusivamente sólo bajo la influencia de la fuerza de la 
+gravedad. También en este apartado se supondrá que la resistencia aerodinámica del aire es insignificante (para el caso real esto 
+depende de la forma del cuerpo), es decir, se supone que el cuerpo se mueve el vacío. 
+
+\subsection{Caída libre:}
+
+Se trata del movimiento de un cuerpo cuando cae desde cierta altura (la distancia que recorre el cuerpo durante toda la caída) 
+por encima del nivel de la superficie de la Tierra (piso) hacia abajo. Este movimiento es un MRUV con una aceleración la cual es 
+la gravedad $a = g = 9.8 m/s^2$ (constante), la cual está en la misma dirección de la velocidad lo cual hace que se trate de un 
+movimiento acelerado. 
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{images/caida-libre.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la caída libre de un cuerpo.}\label{caidalibre}
+\end{figure} 
+
+Y las ecuaciones de movimiento son las de un MRUV:
+
+\begin{equation}
+ v_f = v_0 + gt
+\end{equation}
+
+\begin{equation}
+ v_f^2 = v_0^2 + 2gh
+\end{equation}
+
+\begin{equation}
+ h = (\frac{v_f + v_0}{2})t
+\end{equation}
+
+\begin{equation}
+ h = v_0t + \frac{1}{2}gt^2
+\end{equation}
+
+En la figura \ref{caidalibre2} se observa como un cuerpo parte del reposo ($v_0 = 0$) y cae bajo la acción de la gravedad y 
+consecuentemente su velocidad va aumentado rápidamente con el paso del tiempo.
+ 
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.4]{images/freefall-timeline-large.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del tiempo de caída de un cuerpo.}\label{caidalibre2}
+\end{figure}  
+ 
+\subsection{Lanzamiento vertical:}
+
+Este movimiento es de tipo MRUV que trata del lanzamiento de un cuerpo en línea recta hacia arriba en contra de la gravedad, y 
+por tanto en este caso para cálculos la gravedad se toma como $g = -9.8 m/s^2$, se nota el signo negativo por cuanto en este caso 
+el movimiento es retardado y la fuerza de la gravedad está encontra del movimiento. Obviamente para que ocurra este movimiento el 
+cuerpo lanzado debe partir con una velocidad inicial diferente de cero ($v_0 = 0$), y así mismo la velocidad alcanzará su valor 
+mínimo de cero donde se dice que el cuerpo ha alcanzado su altura máxima ($h_{max}$) y ya no sube más, y posteriormente bajará con 
+un movimiento de caída libre que parte del reposo.
+ 
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.7]{images/lanzamientovertical.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del lanzamiento vertical.}\label{lanzamientov}
+\end{figure}   
+ 
+Es importante mencionar que cuando cuerpo realiza un lanzamiento vertical, este movimiento tiene cierta simetría con la caída 
+libre que luego realizará una vez que alcanze la altura máxima, debido a que esta bajo la mismo módulo de la aceleración de la 
+gravedad y que además recorre la misma distancia (altura), y por tanto el tiempo que demorá en subir el cuerpo (tiempo de subida: 
+$t_s$) es el mismo tiempo que demora en bajar (tiempo de bajada: $t_b$).
+
+\chapter{Movimiento parabólico:} 
+ 
+\textit{``¿Por qué las cosas son como son y no de otra manera?''} \textbf{Johannes Kepler}
+\vspace{1.0cm}  
+ 
+También llamado tiro de proyectiles, corresponde al movimiento de un proyectil en el campo gravitatorio y que cuya  trayectoria es 
+una parábola.
+ 
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{images/movimiento_parabolico.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del movimiento parabólico.}\label{movparabola}
+\end{figure}   
+
+Para el análisis de este movimiento se lo considera como la composición de dos movimientos: horizontal (respecto al eje x) y 
+vertical (respecto al eje y).\\
+
+Antes de analizar estos submovimientos hay que considerar que el móvil inicia su movimiento con una velocidad inicial $\vec{v_0}$ 
+que hace un ángulo $\theta$ (ángulo de tiro) con la horizontal referenciada con el eje x positivo. Así, resulta conveniente 
+encontrar las componentes de esta velocidad en cada eje cartesiano, y estas son:
+
+\begin{equation}
+ \vec{v_{0x}}=\vec{v_0}cos(\theta)
+\end{equation}
+
+\begin{equation}
+ \vec{v_{0y}}=\vec{v_0}sen(\theta)
+\end{equation}
+
+\textbf{Movimiento horizontal:}\\
+
+Este movimiento se refiere al movimiento de la proyección del cuerpo en el eje $x$, en este eje la velocidad es constante, es 
+decir, $\vec{v_{0x}} =  \text{constante} = v_x$ y por tanto el movimiento en este eje es MRU, y por tanto la ecuación de 
+movimiento es:
+
+\begin{equation}
+ x = v_{0x}t=v_x \Delta t
+\end{equation}
+
+A la distancia máxima en el eje $x$ que la proyección del cuerpo logra moverse se la denomina alcance máximo ($x_{max}$). Y al 
+tiempo que demoró en cubrir esa distancia se la llama tiempo de vuelo ($t_v$), con lo cual alcance máximo es:
+
+\begin{equation}
+ x_{max} =  v_x t_v
+\end{equation}
+
+\textbf{Movimiento vertical:}\\
+
+Este es el movimiento correspondiente en el eje $y$, en este movimiento se considera la acción de la gravedad ($g$), además, hay 
+que distinguir que el movimiento se divide en dos etapas: la primera en la que el cuerpo sube con una velocidad inicial $v_{0y} = 
+ v_0 sen(\theta)$ y llega a una altura máxima $h_{max}$ donde el cuerpo tiene una velocidad en $y$ de 0 (en esta etapa se ha 
+realizado un lanzamiento vertical), luego en el cuerpo cae con una velocidad inicial en $y$ de cero así que cae realizando una 
+caída libre.\\
+
+Entonces la velocidad del cuerpo en cualquier instante es:
+
+\begin{equation}
+ \vec{v} = \vec{v_x} + \vec{v_y}\quad \text{cuyo módulo es:} \quad v = \sqrt{v_x^2+v_y^2}
+\end{equation}
+
+Debido a la simetría del movimiento en el eje $y$ es notorio que el tiempo de vuelo es el doble del tiempo de subida como el 
+tiempo de bajada.
+
+\begin{equation}
+ t_v = 2t_s =2t_b
+\end{equation}
+
+Además, que las ecuaciones de movimiento en el eje de las $y$ son las de lanzamiento vertical y caída libre respectivamente:
+
+\begin{equation}
+ v_{fy} = v_{0y} + gt
+\end{equation}
+
+\begin{equation}
+ v_{fy}^2 = v_{0y}^2 + 2gh
+\end{equation}\label{dos}
+
+\begin{equation}
+ h =(\frac{v_{fy}+v_{oy}}{2})t
+\end{equation}
+
+\begin{equation}
+ h = v_{oy}t + \frac{1}{2}gt^2
+\end{equation}
+
+Y así por tanto para encontrar por ejemplo la altura mámixa se utiliza la ecuación (\ref{dos}) sabiendo que la $v_{fy} = 0$, así 
+que:
+
+\begin{equation}
+ h_{max} = -\frac{v_0^2sen^2(\theta)}{2g}
+\end{equation}
+
+\chapter{Movimiento circular:}
+
+\textit{``Y, lógicamente, se mueve con movimiento incesante: pues todas las cosas cesan de moverse cuando llegan a su lugar 
+propio, mientras que el lugar de donde parte el cuerpo circular es el mismo adonde va a parar.''} \textbf{Aristóteles}
+\vspace{1.0cm}
+
+El movimiento circular es el que recorre una partícula o cuerpo realizando una circunferencia como trayectoria. Este movimiento 
+tiene un eje y todos los puntos por los que pasa la partícula se encuentran a una distancia constante (R: radio de la 
+circunferencia) del eje. De modo que cuando el cuerpo con movimiento circular se mueve recorre un longitud de arco ($s$) 
+sostenido por un ángulo recorrido $\theta$, y así se tiene que:
+
+\begin{equation}
+ s = R\theta
+\end{equation}
+
+donde la longitud de arco $s$ se mide en metros, $R$ es el radio de la circunferencia y el ángulo recorrido $\theta$ se mide en 
+radianes.\footnote{Los grados sexagésimales se convierten a radianes mediante el uso de la equivalencia de: $360^\circ = 2\pi 
+rad$.}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{images/movimiento-circular.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del movimiento circular.}\label{circular}
+\end{figure}   
+
+Ya que el cuerpo se mueve a tráves de la trayectoria circular posee dos velocidades: una angular y otra lineal.\\
+
+\subsection{Velocidad angular:}
+
+Esta velocidad mide el ritmo de cambio del ángulo recorrido por el cuerpo en movimiento con respecto al tiempo:
+
+\begin{equation}
+\omega = \frac{\Delta \theta}{\Delta t} \quad [rad/s]
+\end{equation}
+
+\subsection{Velocidad Lineal:}
+
+También llamada velocidad tangencial mide el ritmo de cambio de la longitud de arco recorrida por el cuerpo con respecto al 
+tiempo.
+
+\begin{equation}
+v = \frac{\Delta s}{\Delta t} = \frac{R\Delta \theta}{\Delta t} = R\omega \quad [m/s]
+\end{equation}
+
+Esta velocidad depende exclusivamente de la velocidad angular de manera directa.\\
+
+También se definen dos magnitudes importantes para este movimiento:\\
+
+\textbf{Período:} es el tiempo $T$ que tarda la partícula en dar una vuelta a la circunferencia completa.\\
+
+\textbf{Frecuencia:} Es el número de vueltas $f$ que recorre la partícula en una unidad de tiempo. Se expresa en ciclos/s o 
+hertzios (Hz).\\
+
+Estas dos cantidades se relacionan de manera inversa:
+
+\begin{equation}
+f = \frac{1}{T}\quad [Hz]
+\end{equation}
+, y también con la velocidad angular: 
+\begin{equation}
+w = 2\pi f = \frac{2\pi}{T}
+\end{equation}
+
+Cuando un móvil se mueve con movimiento circular su velocidad lineal siempre esta en constante cambio de dirección, y como se 
+sabe que siempre el cambio de velocidad en el tiempo esta medido por una aceleración, y esta aceleración se llama aceleración 
+centrípeta.
+
+\subsection{Aceleración centrípeta:}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{images/aceleracion-centripeta.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de a aceleración centrípeta.}\label{ac}
+\end{figure}
+
+Esta aceleración es la que se origina debido al cambio de dirección constante de la velocidad lineal cuando el cuerpo gira a 
+través de la circunferencia, y su dirección es central, siempre apuntando al centro del círculo. Y su expresión de cálculo es:
+
+\begin{equation}
+a_c = \frac{v^2}{R} =  \omega^2 R\quad [m/s^2]
+\end{equation}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{images/acentripeta.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del origen vectorial de la aceleración centrípeta.}\label{ac}
+\end{figure} 
+
+\section{Movimiento Circular Uniforme (MCU):}
+
+Es aquel movimiento circular en que el móvil se mueve con velocidad tanto angular y lineal constante, es decir la velocidad 
+angular y la lineal no cambian su valor en el tiempo. De este modo se puede decir que el móvil en este movimiento recorre 
+distancias iguales en tiempo iguales. 
+
+\begin{tcolorbox}
+Es decir, en el MCU: $\omega = constante$ y $v = constante.$
+\end{tcolorbox}
+
+Esto implica que el cuerpo que tiene MCU sólamente posee una aceleración que es la centrípeta.
+
+\section{Movimiento Circular Uniformemente Variado:}
+
+Es el movimiento que realiza un cuerpo con trayectoria circular y con una aceleración tangencial, que hace que la velocidad 
+lineal y angular no sean constantes en el tiempo. El cuerpo con MCUV tiene una aceleración angular y aceleración tangencial 
+constantes, y estás miden la variación de la velocidad angular y lineal respecto al tiempo.\\
+
+\subsection{Aceleración angular:}
+
+Es una cantidad vectorial que mide el ritmo de cambio de la velocidad angular con el tiempo, la cual se mantiene constante en el 
+MCUV. Esta aceleración se calcula así:
+
+\begin{equation}
+\alpha = \frac{\Delta \omega}{\Delta t} =  \frac{\omega_f - \omega_0}{\Delta t}\quad [rad/s^2]
+\end{equation}
+  
+
+donde $\Delta \omega = \omega_f-\omega_0$ representa la variación de la velocidad angular desde una inicial $\omega_0$ hasta una 
+final $\omega_f$. Si esta aceleración $\alpha$ es positiva el movimiento es acelerado, mientras que si $\alpha$ es negativa el 
+movimiento es de frenado.
+
+\subsection{Aceleración tangencial:}
+
+O también llamada lineal, esta mide la variación de la velocidad tangencial con respecto al tiempo, la cual se mantiene constante 
+en el MCUV. Esta aceleración se calcula así:
+
+\begin{equation}
+a_T =\frac{\Delta v}{\Delta t} =\frac{v_f-v_0}{\Delta t}\quad [m/s^2]
+\end{equation} 
+
+donde $\Delta v = v_f-v_0$ representa la variación de la velocidad tangencial desde una inicial $v_0$ hasta una final $v_f$. Si 
+esta aceleración $a_T$ es positiva el movimiento es acelerado, mientras que si $\alpha$ es negativa el movimiento es de frenado. 
+Así, mismo como la velocidad tangencial esta aceleración es tangente a la trayectoria, y mide de que tan rápido o tan lento el 
+cuerpo está cambiando su velocidad.
+
+\begin{tcolorbox}
+En el MCUV: $a_T = constante$ y $\alpha = constante$
+\end{tcolorbox}
+
+Las dos aceleraciones anteriores descritas se relacionan mediante la siguiente ecuación:
+
+\begin{equation}
+a_T = \alpha R
+\end{equation} 
+
+, y la aceleración resultante de un cuerpo con MCUV es:
+
+\begin{equation}
+\vec{a} = \vec{a_T}+\vec{a_c}
+\end{equation}
+
+cuyo módulo es entonces:
+
+\begin{equation}
+a_R =\sqrt{a_c^2+a_T^2} 
+\end{equation}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{images/aceleracion-resultante.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la aceleración resultante en un MCUV.}\label{ac}
+\end{figure} 
+ 
+Este movimiento queda descrito completamente con las siguientes ecuaciones:\\
+
+\textbf{Parte angular:}
+
+\begin{equation}
+\omega_f = \omega_0 + \alpha t
+\end{equation}
+
+\begin{equation}
+\omega_f^2 = \omega_0^2 + 2\alpha\theta
+\end{equation}
+
+\begin{equation}
+\theta = (\frac{\omega_f + \omega_0}{2})t
+\end{equation}
+
+\begin{equation}
+\theta = \omega_0t+\frac{1}{2}\alpha t^2
+\end{equation}
+
+\textbf{Parte lineal:}
+
+\begin{equation}
+v_f = v_0 + a_Tt
+\end{equation}
+
+\begin{equation}
+v_f^2 = v_0^2 +2a_Ts
+\end{equation}
+
+\begin{equation}
+s = (\frac{v_f + v_0}{2})t
+\end{equation}
+
+\begin{equation}
+s = v_0t+\frac{1}{2}a_Tt^2
+\end{equation}
+
+\chapter{Dinámica}
+
+\textit{``Si he realizado descubrimientos invaluables ha sido más por tener paciencia que cualquier otro talento.''}\textbf{Sir 
+Isaac Newton}
+\vspace{1.0cm}
+
+En este apartado se refiere a la Dinámica, la cual es la parte de la Física que estudia o analiza el movimiento desde sus causas 
+(fuerzas), es decir, que es lo que genera el movimiento.\\
+
+Las causas que generan el movimiento se denominan fuerzas, entiendiéndose como fuerza a aquella capacidad física que ejerce un 
+cuerpo sobre otro y que genera movimiento e incluso deformaciones.\\
+
+La persona que realizó un estudio formidable acerca de Dinámica fue Sir Isaac Newton, y sobre cuyo estudio plasmado en tres leyes 
+descansa la base de la Dinámica.
+ 
+\section{Las leyes de Newton:}
+
+Son un total de tres leyes que describen el comportamiento de las fuerzas y como los cuerpos reaccionan ante ellas.
+
+\subsection{Primera Ley de Newton:}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{images/primera-ley-de-newton.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la primera ley de Newton.}\label{ac}
+\end{figure} 
+
+O también conocida como \textbf{Ley de la Inercia\footnote{Oposición o resistencia que presenta un cuerpo para ponerse 
+en movimiento.} o de la Masa}, esta ley dice:
+
+\begin{tcolorbox}
+"Todo cuerpo que esta en movimiento o en reposo continua en ese estado indefinidamente y solo cambia de estado cuando existe una 
+fuerza exterior que modifica la permanencia".
+\end{tcolorbox}
+
+Esto implica que si la fuerza resultante aplicado sobre un cuerpo es igual a cero sólo existen dos posibilidades de estado de 
+movimiento para ese cuerpo; ya sea el reposo o el MRU. Así, esta ley nos dice que la causa del movimiento es la fuerza, es decir, 
+si quiero darle movimiento a un cuerpo debo aplicarle obligatoriamente una fuerza.
+
+\begin{tcolorbox}
+Si $\sum \vec{F} = 0$ entonces se tienen reposo ($v = 0$) o MRU ($v =  \text{constante}$)
+\end{tcolorbox}
+
+\subsection{Segunda Ley de Newton:}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{images/segunda-ley-de-newton.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la primera ley de Newton.}\label{ac}
+\end{figure} 
+
+Tambien conocida como \textbf{Ley de la Fuerza}, y dice:
+
+\begin{tcolorbox}
+"Si a un cuerpo de masa $m$ se le aplica una fuerza $\vec{F}$, ésta fuerza le produce una aceleración $a$."
+\end{tcolorbox}
+
+Esta aceleración es directamente proporcional a la Fuerza e inversamente proporcional a la masa, y esto se escribe así:
+
+\begin{equation}
+\vec{a} \propto \vec{F} \quad y \quad \vec{a} \propto \frac{1}{m}
+\end{equation}
+
+Uniendo estas dos proporcionalidades se obtiene que la fuerza es directamente proporcional a la masa y a la aceleración, y así 
+queda como ecuación:
+
+\begin{equation}
+\vec{F} = m\vec{a} \quad [N]
+\end{equation}
+donde se ha tomado como constante de proporcionalidad la unidad, y las unidades de la fuerza es el Newton($N$), así mismo para el 
+caso de varias fuerzas aplicadas en un cuerpo la ley se generaliza así:
+
+\begin{equation}
+\sum \vec{F} = m\vec{a}
+\end{equation} 
+
+\subsection{Tercera Ley de Newton}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{images/tercera-ley-de-newton.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la tercera ley de Newton.}\label{ac}
+\end{figure}
+
+A esta ley se la conoce como la \textbf{ley de la acción y reacción}, y dice:
+
+\begin{tcolorbox}
+''En el Universo las fuerzas nunca aparecen solas, sino en parejas donde una la acción y la otra la reacción, estás fuerzas son 
+de igual tamaño pero de sentido contrario".
+\end{tcolorbox}
+
+\begin{equation}
+\vec{F_{\text{acción}}} = -\vec{F_{\text{reacción}}}
+\end{equation}
+
+Es importante descatar que la fuerza de acción y reacción actuan sobre cuerpos diferentes no sobre el mismo.\\
+
+Para abordar problemas de dinámica un poco complejos es importante definir bien algunos tipos de fuerza comunes:
+
+\subsection{El Peso:}
+
+El peso es la fuerza gravitatoria que actúa sobre un objeto que tiene masa ($g$). El peso es causado por la acción del campo 
+gravitatorio local sobre la masa del cuerpo. Por ser una fuerza, el peso se representa como un vector, definido por su módulo, 
+dirección y sentido, aplicado en el centro de gravedad del cuerpo y dirigido aproximadamente hacia el centro de la Tierra.\\
+
+Clásicamente se calcula así:
+
+\begin{equation}
+\vec{P} = m\vec{g}
+\end{equation}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.4]{images/peso.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la dirección del peso en dos casos diferentes.}\label{ac}
+\end{figure}
+
+\subsection{La fuerza normal ($\vec{N}$):}
+
+Es la fuerza que ejerce una superficie sobre un cuerpo apoyado sobre ella. Esta es de igual magnitud y dirección, pero de sentido 
+contrario a la fuerza ejercida por el cuerpo sobre la superficie.La fuerza normal es una fuerza de contacto. Si dos superficies 
+no están en contacto, no pueden ejercer fuerza normal una sobre la otra.\\
+
+La fuerza normal es la fuerza que las superficies ejercen para prevenir que los objetos sólidos se atraviesen entre sí. Ésta 
+fuerza siempre es perpendicular a la superficie de contacto.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.2]{images/fuerzanormal.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la dirección de la fuerza normal en diferentes casos.}\label{ac}
+\end{figure}
+
+\subsection{Fuerzas de tensión ($\vec{T}$):}
+
+Son aquellas fuerzas que se transmiten a tráves de cuerdas o hilos cuando se los tensiona.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.7]{images/tensiones.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de las tensiones sobre unas cuerdas que sostienen un semáforo.}\label{ac}
+\end{figure}
+
+\subsection{Fuerza de rozamiento:}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{images/fuerza-rozamiento.jpg}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de la fuerza de rozamiento.}\label{fr}
+\end{figure}
+
+Se trata de aquella fuerza que se origina cuando dos superficies en contacto se deslizan una sobre otra, debido a que las 
+superficies, aún las que se consideran pulidas son extremadamente rugosas a escala microscópica. Es decir, esta fuerza es la que 
+se opone al movimiento relativo entre ellas. Esta fuerza es de tipo disipativa, es decir, cuando esta se genera también se genera 
+una pérdida de energía que se convierte en calor.\\
+
+Esta fuerza de fricción se comporta de tal manera que cumple con los siguientes postulados básicos:\\
+
+\textbf{a.} La resistencia al deslizamiento tangencial entre dos cuerpos es proporcional a la fuerza normal ejercida entre los 
+mismos.
+\textbf{b.} La resistencia al deslizamiento tangencial entre dos cuerpos es independiente de las dimensiones de contacto entre 
+ambos.\\
+
+La fuerza de fricción ($f_r$) en forma general se calcula de la siguiente manera:
+
+\begin{equation}
+f_r = \mu N
+\end{equation}
+  
+donde $\mu$ es una constante adimensional\footnote{Se dice adimensional a aquellas cantidades que no poseen unidades de medida.} 
+de llamada coeficiente de rozamiento que depende de la naturaleza de las superficies de rozamiento, que es además un número entre 
+0 y 1, además, $N$ es la fuerza normal. Esta fuerza se opone al movimiento relativo al movimiento, por cuanto tendrá una 
+dirección opuesta a este movimiento.  
+    
+\subsubsection{Tipos de Rozamiento:}
+
+Existen dos tipos de rozamiento o fricción, la fricción estática ($f_{rs}$) y la fricción cinética ($f_{rk}$).\\ 
+ 
+\textbf{Fuerza de fricción estática:}\\
+
+Es la resistencia que se debe superar para poner en movimiento un cuerpo con respecto a otro que se encuentra en 
+contacto. Se calcula así:
+
+\begin{equation}
+f_{rs} = \mu_e N
+\end{equation}
+donde $\mu_s$ es el coeficiente de rozamiento estatico.\\
+
+\textbf{Fuerza de rozamiento cinética:}\\
+
+Es la resistencia, de magnitud considerada constante, que se opone al movimiento pero una vez que este ya comenzó.
+
+\begin{equation}
+f_{rk} = \mu_k N
+\end{equation}
+donde $\mu_k$ es el coeficiente de rozamiento cinético.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.4]{images/fsta.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del comportamiento de la fuerza de fricción.}\label{frb}
+\end{figure}
+
+En la figura \ref{frb} se puede apreciar como actua el rozamiento cuando se mueve un cuerpo desde el reposo, primero se genera 
+fuerza de rozamiento estática ($f_{rs}$) que se va incrementando desde cero hasta un valor máximo donde se supone que el cuerpo 
+que se quiere mover comienza a moverse, luego esta fuerza de rozamiento disminuye en valor teniéndose de hecho a lo que se llama 
+fuerza de rozamiento cinético ($f_{rk}$).
+
+\section{Diagrama de cuerpo libre:}
+
+Para la resolución de sistemas dinámicas usualmente se usa una técnica llamada el diagrama de cuerpo libre que consiste en un 
+boceto de un objeto de interés despojado de todos los objetos que lo rodean y mostrando todas las fuerzas que actúan sobre el 
+cuerpo.\\
+
+Consiste en colocar la partícula en el origen de un plano de coordenadas, y representar a las fuerzas que actúan sobre ella por 
+medio de los vectores correspondientes, todos concurrentes en el origen. La mayor aplicación de los DCL es visualizar mejor el 
+sistema de fuerzas que actúan sobre un cuerpo; además, se identifican mejor las fuerzas pares, como la de acción - reacción y las 
+componentes de las fuerzas.\\
+
+Si en un sistema existen dos o más cuerpos de interés, éstos se deben separar y cada uno tiene un DCL propio con sus respectivas 
+fuerzas actuando.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.6]{images/cuerpo-libre.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración de un ejemplo de diagrama de cuerpo libre.}\label{frb}
+\end{figure}
+
+\chapter{Trabajo y Energía}
+
+\textit{``El movimiento es un modo de ser que resulta necesariamente de la materia; ésta se mueve por su propia energía; sus 
+movimientos se deben a las fuerzas que le son inherentes.''}\textbf{Barón de Holbach}\vspace{1.0 cm}
+
+El concepto de energía (\textbf{E}) es uno de los más utilizados y destacados en esta ciencia. En este Universo la energía juega 
+un papel muy importante, es aquella encargada del movimiento de los cuerpos y que los procesos naturales sean posibles.
+
+\begin{tcolorbox}
+La energía es la capacidad que poseen los cuerpos para poder efectuar un trabajo (movimiento) o de lograr alguna transformación.  
+\end{tcolorbox}
+
+Según la forma o el sistema físico en que se manifiesta, se consideran diferentes formas de energía: térmica, mecánica, eléctrica, 
+química, electromagnética, nuclear, luminosa, etc. En cuanto a su unidad de medida es el "JOULE" ó "JULIO", que se denota 
+simplemente como \textbf{J}.\\
+
+Aunque la energía puede cambiar de forma en los procesos de conversión energética, la cantidad de energía se mantiene constante 
+conforme con el \textbf{principio de conservación de la energía} que establece:
+
+\begin{tcolorbox}
+``La energía no se crea ni se destruye, sólo se transforma''. 
+\end{tcolorbox}
+
+Por consiguiente, la energía total de un sistema aislado se mantiene constante y en el universo no puede existir creación o 
+desaparición de energía, sino transferencia de un sistema a otro o transformación de energía de una forma a otra, es en otras 
+palabras, la energía es una invariante física. Así en un sistema aislado se tendrá que la energía total de cuyo sistema es el 
+mismo, es decir:
+
+\begin{equation}
+E_{inicio} = E_{final}
+\end{equation}
+
+En este momento nos referiremos específicamente a la energía mecánica ($E_m$) la cual es aquella relacionada con el fenómeno del 
+movimiento, y así está energía se la puede visualizar como la suma de la energía cinética ($E_c$), la energía potencial 
+gravitatoria ($E_p$) y la energía potencial elástica ($E_k$), así inicialmente:
+
+\begin{equation}
+E_m = E_c + E_p + E_k \quad [J]
+\end{equation} 
+
+\section{Energía cinética:}
+
+Esta energía es la que tiene un cuerpo movimiento por el simple hecho de que tiene una velocidad diferente de cero. Por tanto la 
+energía que tiene un cuerpo de masa $m$ cuya velocidad $v$ es:
+
+\begin{equation}
+E_c = \frac{1}{2}mv^2
+\end{equation}
+
+\section{Energía potencial gravitatoria:}
+
+Está energía está asociada a la posición que tienen los cuerpos, y no a su movimiento. Se define como aquella que poseen los 
+cuerpos por el hecho de encontrarse en una determinada posición en un campo de fuerzas.\\
+
+Un concepto más acertado es el siguiente:
+
+\begin{tcolorbox}
+La energía potencial gravitatoria. de una masa en un punto del espacio es el trabajo que realiza en un campo gravitatorio para 
+trasladar la masa desde dicho punto hasta el infinito. 
+\end{tcolorbox}
+
+Es decir, está energía es la que posee un cuerpo por el hecho de encontrarse bajo la acción de la gravedad. Su valor, para el caso 
+de alturas pequeñas sobre la superficie terrestre, viene dado por:
+
+\begin{equation}
+E_p = mgh
+\end{equation}
+
+donde la $h$ es la altura del cuerpo con respecto al suelo.
+
+\section{Energía Potencial Elástica:}
+
+Esta energía es la que se almacena o se libera cuando un resorte es comprimido o estirado, esta energía depende del material del 
+resorte como también de la variacción de su longitud al ser manipulado.\\
+
+Todo resorte tiene una constante elástica $k$ llamada constante de elásticidad del resorte y está relacionado con la energía 
+potencial elástica ($E_k$) como:
+
+\begin{equation}
+E_k = \frac{1}{2}k\Delta x^2
+\end{equation}
+
+donde $\Delta x$ es la longitud comprimida o alargada el resorte por una fuerza. Un concepto más acertado de está energía es el 
+trabajo realizado por una fuerza al comprimir o alargar un resorte.
+
+Se ha mencionado el término de trabajo, por lo cual es pertinente conocer el significado físico de ese término.
+
+\section{Trabajo mecánico:}
+
+El trabajo mecánico es la capacidad de una fuerza para desplazar un cuerpo una cierta distancia. Es decir, es esa energía 
+necesaria para poder mover a ese cuerpo una distancia mediante una fuerza.\\
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=0.5]{images/trabajo.png}
+ % cinematica.png: 0x0 px, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Ilustración del trabajo mecánico.}\label{tmec}
+\end{figure}
+
+El trabajo es una magnitud física escalar que se representa con la letra $W$ y se expresa en unidades de energía (\textbf{J}) en 
+el Sistema Internacional de Unidades. Para el cálculo del trabajo sólo se tiene en cuenta la componente de la fuerza que actúa en 
+la dirección de desplazamiento del cuerpo, por lo que el trabajo es una magnitud escalar. De este modo el trabajo se computa así:
+
+\begin{equation}
+W = \vec{F}\cdot\vec{\Delta r}\quad [J]
+\end{equation}
+
+donde se observa que el trabajo mecánico es el producto escalar entre la fuerza $\vec{F}$ y el desplazamiento $\Delta \vec{r}$ que 
+realiza el cuerpo bajo la influencia de $\vec{F}$.\\
+
+El trabajo mecánico puede tener dos signos: uno positivo y otro negativo. El signo positivo es cuando la fuerza aplicada va en el 
+mismo sentido del movimiento, pero es negativo cuando va en contra del movimiento, ya que el trabajo mecánico es:
+
+\begin{equation}
+W = F\Delta r cos(\theta)
+\end{equation}
+ 
+siendo el $\theta$ el ángulo entre la fuerza $\vec{F}$ y el desplazamiento $\Delta \vec{r}$. También, existe el caso cuando el 
+trabajo es nulo que correspondería cuando la fuerza y el desplazamiento son perpendiculares entre sí.
+  
+\section{Potencia:}  
+
+La potencia se puede entender como la rapidez con la que se efectúa trabajo y se define como el trabajo realizado por unidad de 
+tiempo. La potencia mecánica se simboliza con la letra P
+
+\begin{equation}
+P = \frac{W}{\Delta t}\quad [W]
+\end{equation}
+
+También la potencia la podemos expresar en término de la velocidad, para cuando la fuerza es constante
+
+\begin{equation}
+P = Fv
+\end{equation}
+
+Las unidad de medida para la potencia en el S.I son el Watts ($W$), el cual se define como $Joule/s$.
+
+\chapter*{Bibliografía:}
+
+\begin{enumerate}
+ \item René Descartes. Discurso del método. segundo título o indicación al título principal Discours de la methode. Pour bien 
+conduire la raison \& chercher.
+ \item Molina M.J.T.- El Método Científico Global.
+ \item Kuhn, Thomas S., "The Function of Measurement in Modern Physical Science", ISIS 52(2), 161?193, 1961.
+ \end{enumerate}
+
+\end{document}
