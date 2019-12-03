@@ -41,10 +41,24 @@ normalheadings,DIV=9,fleqn,x11names,table,twoside=false]{scrbook}
 % Insertar portada
 \definecolor{colordominante}{RGB}{64,190,178}
 
+\usepackage[pages= some]{background}
+% configuración
+\backgroundsetup{
+ scale=1, %escala de la imagen, es recomendable que sea del mismo tamaño que el pdf
+ color=black, %fondo a usar para transparencia
+ opacity=1.0, %nivel de transparencia
+ angle=0, %en caso de querer una rotación
+ contents={%
+  \includegraphics[width=\paperwidth,height=\paperheight]{images/foto_portada.jpg} %nombre de la imagen a utilizar como fondo
+ }%
+}
+
+
 \begin{document}
 %\includepdf[pages=-]{images/Portada}
 
 %=========================================
+\BgThispage
 \begin{titlepage}
 		\centering{
 			{\fontsize{40}{48}\selectfont 
@@ -62,6 +76,7 @@ normalheadings,DIV=9,fleqn,x11names,table,twoside=false]{scrbook}
 \newpage
 ~\vfill
 \thispagestyle{empty}
+\cleardoublepage
 
 \noindent 
 \parbox[s]{0.35\textwidth}{Derechos reservados \copyright\ 2019}\parbox[c]{0.65\textwidth}{
